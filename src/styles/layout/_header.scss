@@ -1,0 +1,191 @@
+#masthead{
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 1.5em;
+    #logo-area{
+        width: 75%;
+        margin-top: 3em;
+        #inspirational{
+            position: relative;
+            display: block;
+            width: 85%;
+            fill: $grey;
+            z-index: 1;
+        }
+        #byMarie{
+            position: relative;
+            display: block;
+            width: 60%;
+            fill: $light_pink;
+            margin-left: auto;
+            margin-top: -.4em;
+            margin-right: 0;
+            z-index: 2;
+        }
+    }
+    #hamburger{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 6;
+        width: 10%;
+        min-height: 2em;
+        margin-left: auto;
+        margin-top: 1.2em;
+        padding-top: .3em;
+        align-self: flex-start;
+        transform: scale(.72);
+        .bar{
+            width: 1.7em;
+            height: 0.13em;
+            margin: 0em auto .3em auto;
+            background-color: $grey;
+            transition: transform .7s ease;
+        }
+    }
+    #hamburger.change{
+        align-items: center;
+        justify-content: center;
+        .bar{
+            background-color: $red;
+            margin: 0;
+        }
+        .bar:nth-child(2){
+            opacity: 0;
+            height: 0;
+        }
+        .bar:nth-child(1){
+            transform: translateY(0.07em) rotate(45deg);
+        }
+        .bar:nth-child(3){
+            transform: translateY(-0.07em) rotate(-45deg);
+        }
+    }
+}
+#secondary{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateY(-100vh);
+    background-color: darken(#ffffff, 15%);
+    z-index: 5;
+    transition: transform 1s ease;
+    ul{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 0 2em;
+        list-style-type: none;
+        li{
+            position: relative;
+            a{
+                position: relative;
+                display: block;
+                font-size: 3.2em;
+                text-transform: lowercase;
+                font-weight: 700;
+                color: $darker_pink;
+                text-decoration: none;
+                line-height: 1.20;
+                z-index: 888;
+            }
+            a:nth-child(2){
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                color: $red;
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+                transition: all 1s ease-in;
+            }
+            a:nth-child(2).change{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    }
+}
+#secondary.show{
+    transform: translateY(0);
+}
+// Media Queries
+@media only screen and (min-width:475px){
+    #masthead{
+        #logo-area{
+            width: 60%;
+        }
+        #hamburger{
+            align-self: auto;
+        }
+    }
+}
+@media only screen and (min-width:575px){
+    #masthead{
+        #logo-area{
+            width: 50%;
+            margin-left: 4vw;
+        }
+    }
+    #secondary{
+        ul{
+            li{
+                width: 40%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 700px){
+    #masthead{
+        #logo-area{
+            width: 40%;
+        }
+    }
+    #secondary{
+        ul{
+            li{
+                width: 40%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 860px){
+    #masthead{
+        #logo-area{
+            width: 35%;
+        }
+    }
+}
+@media only screen and (min-width: 1020px){
+    #masthead{
+        #logo-area{
+            width: 25%;
+        }
+        #hamburger{
+            .bar{
+                width: 2em;
+                height: 0.2em;
+            }
+        }
+    }
+    #secondary{
+        ul{
+            li{
+                width: 40%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1279px){
+    #masthead{
+        #logo-area{
+            width: 23%;
+        }
+    }
+}

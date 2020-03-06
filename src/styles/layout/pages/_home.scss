@@ -1,0 +1,354 @@
+#home{
+    padding-top: 2em;
+    #intro{
+        display: flex;
+        position: relative;
+        height: 90vw;
+        #box{
+            position: absolute;
+            top: 0;
+            left: 15%;
+            bottom: -1%;
+            width: 80%;
+            background: -moz-linear-gradient(-45deg, rgba(191,75,79,1) 0%, rgba(191,75,79,0) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(191,75,79,1) 0%,rgba(191,75,79,0) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(191,75,79,1) 0%,rgba(191,75,79,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf4b4f', endColorstr='#00bf4b4f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            clip-path: polygon(0% 0%, 0% 100%, 6% 100%, 6% 4%, 95% 4%, 94% 96%, 0 96%, 3% 100%, 100% 100%, 100% 0%);
+            //transform: translateX(0.7em);
+        }
+        #motto{
+            position: relative;
+            width: 40%;
+            margin: 10vw 0 0 10vw;
+            z-index: 1;
+            p{
+                display: inline-block;
+                color: darken(#ffffff, 17%);
+                font-weight: 900;
+                font-family: $motto_font;
+                margin:  0.16em 0;
+                font-size: 10vw;;
+                line-height: 0.9;
+                letter-spacing: 0.02em;
+                text-shadow: -0.01em -0.02em 0.05em lighten($black, 30%);
+                border-bottom: .0em solid darken($darker_pink, 12%);
+                span{
+                    display: block;
+                    overflow: hidden;
+                    transition: height 1s ease;
+                }
+                span:nth-child(2){
+                    position: relative;
+                    z-index: 2;
+                    transform: translateY(-.12em);
+                    margin-left: .2em;
+                }
+            }
+            p:nth-child(1){
+                #be-1{
+                    height: 0;
+                }
+                #in{
+                    height: 0;
+                }
+            }
+            p:nth-child(2){
+                #be-2{
+                    height: 0;
+                }
+                #enc{
+                    height: 0;
+                }
+            }
+            p:nth-child(3){
+                #be-3{
+                    height: 0;
+                }
+                #bless{
+                    height: 0;
+                }
+            }
+        }
+        #images{
+            position: relative;
+            width: 60%;
+            height: inherit;
+            z-index: 0;
+            overflow: hidden;
+            img{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                display: block;
+                opacity: 0;
+                transition: opacity .7s ease;
+            }
+            img:last-child{
+                position: relative;
+            }
+        }
+    }
+    #banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 65%;
+        height: 12vw;
+        margin-left: auto;
+        transform: translateY(-6vw);
+        background-color: $darker_pink;
+        box-shadow: inset .1em .1em .15em $black;
+        z-index: 3;
+        a{
+            color: darken(#ffffff, 17%);
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 5vw;
+            font-weight: 900;
+            margin: .2em 0 0 1em;
+        }
+    }
+    #qoftd{
+        width: 80%;
+        margin: 1.5em auto;
+        #quote{
+            position: relative;
+            .quote{
+                position: absolute;
+                width: 7%;
+                img{
+                    display: block;
+                }
+            }
+            .quote:nth-child(1){
+                top: -10%;
+                left: 10%;
+                transform: rotate(180deg);
+
+            }
+            .quote:nth-child(3){
+                bottom: -10%;
+                right: 10%;
+            }
+            p{
+                position: relative;
+                color: #ffffff;
+                font-size: 7.5vw;
+                font-style: italic;
+                font-weight: 300;
+                margin: 0;
+                text-align: center;
+                z-index: 2;
+            }
+        }
+        span{
+            display: block;
+            color: darken(#ffffff, 20%);
+            text-align: center;
+            font-size: 4vw;
+        }
+    }
+    #post{
+        width: 100%;
+        overflow-x: auto;
+        .post-wrapper{
+            display: flex;
+            justify-content: space-around;
+            width: 200%;
+            .frontpage-post{
+                margin: 1.5em;
+                a{
+                    display: block;
+                    color: darken(#ffffff, 15%);
+                    text-decoration: none;
+                    p{
+                        font-size: 4vw;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Queries
+@media only screen and (min-width: 475px){
+    #home{
+        #intro{
+            width: 85%;
+            height: auto;
+            margin: 0 auto;
+            #motto{
+                margin: 5vw 0 0 5vw;
+            }
+        }
+        #banner{
+            width: 50%;
+            height: 9vw;
+            margin-right: 8vw;
+            transform: translateY(-4vw);
+        }
+        #qoftd{
+            width: 60%;
+            #quote{
+                p{
+                    font-size: 6vw;
+                }
+                font-size: 3vw;
+            }
+        }
+        #post{
+            .post-wrapper{
+                width: 140%;
+                padding-left: 3vw;
+                .frontpage-post{
+                    a{
+                        p{
+                            font-size: 3vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 575px){
+    #home{
+        #post{
+            .post-wrapper{
+                width: 120%;
+                padding-left: 3vw;
+                a{
+                    p{
+                        font-size: .85em;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 700px){
+    #home{
+        #intro{
+            width: 60%;
+            margin-top: 1em;
+            #box{
+                width: 70%;
+            }
+            #motto{
+                p{
+                    font-size: 6vw;
+                }
+            }
+        }
+        #banner{
+            width: 35%;
+            height: 3em;
+            margin-right: 20vw;
+            align-items: center;
+            a{
+                font-size: 3vw;
+                margin: .2em 0 0 0;
+            }
+        }
+        #qoftd{
+            width: 44%;
+            #quote{
+                font-size: 1em;
+                p{
+                    font-size: 1.85em;
+                }
+            }
+            span{
+                font-size: 1em;
+            }
+        }
+        #post{
+            .post-wrapper{
+                width: 75%;
+                margin: 0 auto;
+                padding: 0;
+                .frontpage-post{
+                    a{
+                        p{
+                            font-size: .75em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 860px){
+    #home{
+        #intro{
+            width: 55%;
+            #motto{
+                p{
+                    font-size: 5vw;
+                }
+            }
+        }
+        #banner{
+            width: 30%;
+            margin-right: 27vw;
+            transform: translateY(-2em);
+        }
+    }
+}
+@media only screen and (min-width: 1020px){
+    #home{
+        #intro{
+            width: 45%;
+            #motto{
+                p{
+                    font-size: 2.5em;
+                }
+            }
+        }
+        #banner{
+            width: 25%;
+            margin-right: 30vw;
+            a{
+                font-size: 1.2em;
+                text-align: center;
+            }
+        }
+        #qoftd{
+            width: 35%;
+        }
+        #post{
+            .post-wrapper{
+                width: 55%;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1279px){
+    #home{
+        #intro {
+            width: 40%;
+        }
+        #banner{
+            width: 20%;
+            margin-right: 32vw;
+        }
+    }
+}
+@media only screen and (min-width: 1400px){
+    #home{
+        #intro{
+            #motto{
+                p{
+                    font-size: 3em;
+                }
+            }
+        }
+        #qoftd{
+            width: 26%;
+        }
+    }
+}

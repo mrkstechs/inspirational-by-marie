@@ -14,20 +14,19 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'inspirational-by-marie' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'inspirational-by-marie' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'inspirational-by-marie' ), 'inspirational-by-marie', '<a href="https://www.kcrweb.com/">KCR</a>' );
-				?>
-		</div><!-- .site-info -->
+		<?php wp_nav_menu( array('theme_location' => 'social-menu') ); ?>
+		<p>© Copyright 2020, Inspirational By Marie</p>
 	</footer><!-- #colophon -->
+	<div id="background-shapes">
+		<div id="bg-top">
+			<div class="bg-shape"></div>
+			<div class="bg-shape"></div>
+		</div>
+		<div id="bg-bottom">
+			<div class="bg-shape"></div>
+			<div class="bg-shape"></div>
+		</div>
+	</div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

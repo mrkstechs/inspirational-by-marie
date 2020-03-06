@@ -7,6 +7,12 @@
  * @package Inspirational_By_Marie
  */
 
+/**
+ * Admin Page Fucntions
+ */
+require get_template_directory() . '/inc/function-admin.php';
+require get_template_directory() . '/inc/enqueue.php';
+
 if ( ! function_exists( 'inspirational_by_marie_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -45,6 +51,7 @@ if ( ! function_exists( 'inspirational_by_marie_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'inspirational-by-marie' ),
+			'social-menu' => __('Social Menu'),
 		) );
 
 		/*
@@ -122,6 +129,22 @@ add_action( 'widgets_init', 'inspirational_by_marie_widgets_init' );
 function inspirational_by_marie_scripts() {
 	wp_enqueue_style( 'inspirational-by-marie-style', get_stylesheet_uri() );
 
+	if(is_front_page()){
+		//wp_enqueue_script( 'home-js', get_template_directory_uri().'/public/js/home.js', array() , true );
+		wp_enqueue_script( 'home-js', 'http://localhost:8080/home.js', array() , true );
+	}
+
+	//wp_enqueue_style( 'by-marie-style', get_template_directory_uri().'/public/css/app.css');
+
+	//wp_enqueue_script( 'by-marie-js', get_template_directory_uri().'/public/js/app.js', array() , true );
+
+	wp_enqueue_script( 'by-marie-js', 'http://localhost:8080/app.js', array() , true );
+
+	if(is_page('community')){
+		//wp_enqueue_script( 'community-js', get_template_directory_uri().'/public/js/community.js', array() , true );
+		wp_enqueue_script( 'community-js', 'http://localhost:8080/community.js', array() , true );
+	}
+
 	wp_enqueue_script( 'inspirational-by-marie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'inspirational-by-marie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -131,6 +154,15 @@ function inspirational_by_marie_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'inspirational_by_marie_scripts' );
+
+function load_fb_js_sdk(){
+	?>
+		<!--<script type="text/javascript" src="<?php //echo get_template_directory_uri() . '/public/js/fbSdk.js;'?>"></script>-->
+		<script type="text/javascript" src="http://localhost:8080/fbSdk.js"></script>
+		<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+	<?php
+}
+add_action( 'load_fb_sdk', 'load_fb_js_sdk' );
 
 /**
  * Implement the Custom Header feature.

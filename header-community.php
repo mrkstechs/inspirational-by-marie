@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php do_action('load_fb_sdk'); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'inspirational-by-marie' ); ?></a>
 

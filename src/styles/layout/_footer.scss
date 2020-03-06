@@ -1,0 +1,70 @@
+.site-footer{
+    margin-top: 3em;
+    overflow: hidden;
+    #menu-social-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        li{
+            width: 2.5em;
+            height: 2.5em;
+            margin: 0 0.2em;
+            a{
+                display: block;
+                height: 100%;
+            }
+            a[href*="facebook"]{
+                background-image: url('/wp-content/themes/inspirational-by-marie/public/imgs/facebook.svg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+            a[href*="twitter"]{
+                background-image: url('/wp-content/themes/inspirational-by-marie/public/imgs/twitter.svg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+            a[href*="instagram"]{
+                background-image: url('/wp-content/themes/inspirational-by-marie/public/imgs/insta.svg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+            a[href*="youtube"]{
+                background-image: url('/wp-content/themes/inspirational-by-marie/public/imgs/youtube.svg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+            a[href*="soundcloud"]{
+                background-image: url('/wp-content/themes/inspirational-by-marie/public/imgs/soundcloud.svg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    p{
+        color: #ffffff;
+        font-size: 3.5vw;
+        text-align: center;
+    }
+}
+
+//Media Queries
+@media only screen and (min-width: 475px){
+    .site-footer{
+        #menu-social-menu{
+            margin-bottom: 1em;
+        }
+        p{
+            font-size: 2.5vw;
+        }
+    }
+}
+@media only screen and (min-width: 700px){
+    .site-footer{
+        p{
+            font-size: .8em;
+        }
+    }
+}

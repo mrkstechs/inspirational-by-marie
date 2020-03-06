@@ -8,7 +8,9 @@ module.exports = env => {
     {
       mode: env.mode,
       entry: {
-        app: './src/index.js'
+        app: './src/index.js',
+        home: './src/js/home.js',
+        community: './src/js/community.js'
       },
       output: {
         filename: '[name].js',

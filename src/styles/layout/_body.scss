@@ -1,0 +1,12 @@
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/com';
+@import 'pages/radio';
+@import 'pages/shop';
+
+.site-main{
+    font-family: $main_font;
+    .seo-text{
+        display: none;
+    }
+}

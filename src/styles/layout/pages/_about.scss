@@ -1,0 +1,69 @@
+#about{
+    padding: 0 2em;
+    .entry-content{
+        margin-top: 0;
+    }
+}
+@media only screen and (min-width: 500px){
+    #about{
+        .wp-block-gallery{
+            padding: 0 2em;
+        }
+    }
+}
+@media only screen and (min-width: 600px){
+    #about{
+        padding: 0 4em;
+        .wp-block-gallery{
+            width: 95%;
+            margin: 0 auto;
+            margin-top: 2em;
+            padding: 0;
+        }
+    }
+}
+@media only screen and (min-width: 760px){
+    #about{
+        padding: 0 6em;
+        .wp-block-gallery{
+            width: 85%;
+        }
+    }
+}
+@media only screen and (min-width: 1024px){
+    #about{
+        .entry-header{
+            @include flexCenter;
+        }
+        .entry-content{
+            p{
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .wp-block-gallery{
+            width: 70%;
+            margin-top: 4em;
+        }
+    }
+}
+@media only screen and (min-width: 1200px){
+    #about{
+        .wp-block-gallery{
+            width: 60%;
+        }
+    }
+}
+@media only screen and (min-width: 1330px){
+    #about{
+        .entry-content{
+            p{
+                width: 65%;
+            }
+        }
+        .wp-block-gallery{
+            width: 40%;
+        }
+    }
+}

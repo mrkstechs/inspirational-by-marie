@@ -12,7 +12,11 @@
  * @package Inspirational_By_Marie
  */
 
- get_header();
+if(is_page('community')){
+	get_header();
+} else{
+	get_header();
+}
 ?>
 
 	<div id="primary" class="content-area">
